@@ -14,8 +14,8 @@ export interface GetSummaryResponse {
 }
 
 export async function getSummary(): Promise<GetSummaryResponse> {
-  const response = await fetch('https://ominous-goggles-jw7vvq7q7q92qjww-3333.app.github.dev/summary')
+  const response = await fetch('http://localhost:3333/summary')
   const data = await response.json()
 
-  return data.summary
+  return data
 }

@@ -7,12 +7,12 @@ import { createGoalCompletion } from '../http/create-goal-completion'
 export function PendingGoals() {
   const queryClient = useQueryClient()
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['pending-goals'],
     queryFn: getPendingGoals,
   })
 
-  if (!data) {
+  if (isLoading || !data) {
     return null
   }
 
